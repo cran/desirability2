@@ -1,30 +1,36 @@
 Package: desirability2
 Title: Desirability Functions for Multiparameter Optimization
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: c(
-    person(given = "Max", family = "Kuhn", email =  "max@posit.co", 
-           role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2402-136X")),
+    person("Max", "Kuhn", , "max@posit.co", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2402-136X")),
     person("Posit Software, PBC", role = c("cph", "fnd"))
   )
-Description: In-line functions for multivariate optimization via desirability 
-    functions (Derringer and Suich, 1980, <doi:10.1080/00224065.1980.11980968>)
-    with easy use within 'dplyr' pipelines.
+Description: In-line functions for multivariate optimization via
+    desirability functions (Derringer and Suich, 1980,
+    <doi:10.1080/00224065.1980.11980968>) with easy use within 'dplyr'
+    pipelines.
 License: MIT + file LICENSE
 URL: https://desirability2.tidymodels.org,
         https://github.com/tidymodels/desirability2
-Depends: R (>= 2.10)
-Imports: glue, purrr, rlang, stats, tibble
-Suggests: covr, dplyr, ggplot2, spelling, testthat (>= 3.0.0)
+BugReports: https://github.com/tidymodels/desirability2/issues
+Depends: R (>= 4.1.0)
+Imports: cli, dplyr, purrr, rlang (>= 1.1.0), S7, stats, tibble
+Suggests: covr, ggplot2, spelling, testthat (>= 3.0.0), tune
 Config/Needs/website: tidyverse/tidytemplate
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
+Collate: 'checks.R' 'computations.R' 'data.R' 'in-line.R'
+        'desirability.R' 'desirability2-package.R'
+        'import-standalone-obj-type.R'
+        'import-standalone-types-check.R' 'overall.R' 'tune.R' 'zzz.R'
 NeedsCompilation: no
-Packaged: 2023-05-10 16:04:01 UTC; max
-Author: Max Kuhn [aut, cre] (<https://orcid.org/0000-0003-2402-136X>),
+Packaged: 2025-07-22 17:06:37 UTC; max
+Author: Max Kuhn [aut, cre] (ORCID: <https://orcid.org/0000-0003-2402-136X>),
   Posit Software, PBC [cph, fnd]
 Maintainer: Max Kuhn <max@posit.co>
 Repository: CRAN
-Date/Publication: 2023-05-11 09:10:02 UTC
+Date/Publication: 2025-07-22 22:52:28 UTC

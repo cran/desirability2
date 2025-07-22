@@ -20,29 +20,29 @@
 #' # Choose model tuning parameters that minimize the number of predictors used
 #' # while maximizing the area under the ROC curve.
 #'
-#' classification_results %>%
+#' classification_results |>
 #'   mutate(
 #'     d_feat = d_min(num_features, 1, 200),
 #'     d_roc  = d_max(roc_auc, 0.5, 0.9),
 #'     d_all  = d_overall(across(starts_with("d_")))
-#'   ) %>%
+#'   ) |>
 #'   arrange(desc(d_all))
 #'
 #' # Bias the ranking toward minimizing features by using a larger scale.
 #'
-#' classification_results %>%
+#' classification_results |>
 #'   mutate(
 #'     d_feat = d_min(num_features, 1, 200, scale = 3),
 #'     d_roc  = d_max(roc_auc, 0.5, 0.9),
 #'     d_all  = d_overall(across(starts_with("d_")))
-#'   ) %>%
+#'   ) |>
 #'   arrange(desc(d_all))
 
 d_overall <- function(..., geometric = TRUE, tolerance = 0) {
   d_lst <- list(...)
   d_lst <- maybe_name(d_lst)
   vals <- dplyr::bind_cols(d_lst)
-  is_d_input(vals)
+  is_d_input(vals, call = rlang::current_call())
   if (ncol(vals) == 1) {
     return(vals[[1]])
   }
@@ -62,9 +62,9 @@ maybe_name <- function(x) {
   # The selector can return vectors (unnamed) and data frames.
   # Binding unnamed things generates a warning so add names here when needed.
   is_tbl <- purrr::map_lgl(x, is.data.frame)
-   if (all(is_tbl)) {
-     return(x)
-   }
+  if (all(is_tbl)) {
+    return(x)
+  }
   if (any(!is_tbl)) {
     if (any(is_tbl)) {
       df_x <- x[is_tbl]
@@ -84,4 +84,3 @@ geomean <- function(x, na.rm = TRUE) {
   }
   exp(sum(log(x), na.rm = na.rm) / sum(!is.na(x)))
 }
-
