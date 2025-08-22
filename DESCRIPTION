@@ -1,6 +1,6 @@
 Package: desirability2
 Title: Desirability Functions for Multiparameter Optimization
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(
     person("Max", "Kuhn", , "max@posit.co", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2402-136X")),
@@ -28,9 +28,9 @@ Collate: 'checks.R' 'computations.R' 'data.R' 'in-line.R'
         'import-standalone-obj-type.R'
         'import-standalone-types-check.R' 'overall.R' 'tune.R' 'zzz.R'
 NeedsCompilation: no
-Packaged: 2025-07-22 17:06:37 UTC; max
+Packaged: 2025-08-22 19:03:00 UTC; max
 Author: Max Kuhn [aut, cre] (ORCID: <https://orcid.org/0000-0003-2402-136X>),
   Posit Software, PBC [cph, fnd]
 Maintainer: Max Kuhn <max@posit.co>
 Repository: CRAN
-Date/Publication: 2025-07-22 22:52:28 UTC
+Date/Publication: 2025-08-22 19:20:02 UTC

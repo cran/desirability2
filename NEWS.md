@@ -1,3 +1,16 @@
+# desirability2 0.2.0
+
+* Export a helper function (`make_desirability_cols()`) to make it easier for 
+  other packages to import and use desirability2. 
+  
+* The `.use_data` default for `desirability()` was changed to `TRUE`. 
+
+* When `use_data = TRUE` is used in the individual desirability functions
+
+   - Infinite values are ignored when computing limits. 
+   - The estimated low and/or high values are nudged in different directions to 
+     avoid them having the same value. 
+
 # desirability2 0.1.0
 
 * Transition from the magrittr pipe to the base R pipe.
